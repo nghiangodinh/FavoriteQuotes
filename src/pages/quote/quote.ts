@@ -1,6 +1,7 @@
 import { ViewController } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Quote } from '@angular/compiler';
 
 @IonicPage()
 @Component({
@@ -8,6 +9,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'quote.html',
 })
 export class QuotePage {
+  person: string
+  text: string
 
   constructor(
     public navCtrl: NavController,
@@ -15,7 +18,12 @@ export class QuotePage {
     public viewCtrl: ViewController) {
   }
 
-  public onClose() {
-    this.viewCtrl.dismiss()
+  public ionViewDidLoad() {
+    this.person = this.navParams.get("person")
+    this.text = this.navParams.get("text")
+  }
+
+  public onClose(remove = false) {
+    this.viewCtrl.dismiss(remove)
   }
 }

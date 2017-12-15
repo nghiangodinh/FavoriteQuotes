@@ -17,7 +17,9 @@ export class LibraryPage implements OnInit {
     icon: string,
     quotes: Quote[] }[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams) {
   }
 
   public ngOnInit() {
@@ -27,7 +29,4 @@ export class LibraryPage implements OnInit {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LibraryPage');
   }
-
-
-
 }

@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title></ion-title>
+    <ion-title>{{ person }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -10,10 +10,10 @@
 <ion-content padding>
   <ion-card>
     <ion-card-content>
-      text
+      {{text}}
     </ion-card-content>
     <ion-row>
-      <button ion-button small outline color="danger">Unfavorite</button>
+      <button ion-button small outline color="danger" (click)="onClose(true)">Unfavorite</button>
     </ion-row>
   </ion-card>
   <button ion-button color="danger" (click)="onClose()">Close</button>

@@ -6,8 +6,11 @@ export class QuoteService {
   private favoriteQuotes: Quote[] = [];
 
   public addQuoteToFavorites(quote: Quote) {
-    this.favoriteQuotes.push(quote);
-    console.log(this.favoriteQuotes);
+    const q = this.favoriteQuotes.find(q => q.id === quote.id);
+    if (!q) {
+      this.favoriteQuotes.push(quote);
+      console.log(this.favoriteQuotes);
+    }
   }
 
   public removeQuoteFromFavorites(quote: Quote) {
@@ -19,5 +22,9 @@ export class QuoteService {
 
   public getFavoriteQuotes() {
     return this.favoriteQuotes.slice()
+  }
+
+  public isQuoteFavorite(quote: Quote) {
+    return this.favoriteQuotes.find(q => q.id === quote.id);
   }
 }
